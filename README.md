@@ -1,7 +1,7 @@
 #                                         Một Số Thao Tác Với Git
 
 # Một Số Lệnh Cơ Bản
-
+!(mô hình)[https://github.com/trantronghienit/workingGit/blob/master/git_status_sequence.png]
 ### tạo file ghi chú 
 ``` echo "# ShellADB" >> README.md ``` 
 ### Khởi Tạo Git Local
@@ -111,7 +111,7 @@ VD: push branch master lên remote với tên là develop</br>
 ===> vì tính chất của 3 loại lệnh trên chỉ là di chuyển về 
 
 ### Với trường hợp đã public commit 
-+ xóa commit luôn không thể xem lịch sử bằng git reflog
++ giống như reset nhưng revert thay đổi cả mes commit
 ```git revert <id_commit>```
 ### Gộp một vài commit thành 1 commit duy nhất
 ```git rebase -i <commit_end>```
