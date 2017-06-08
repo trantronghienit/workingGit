@@ -1,7 +1,7 @@
 #                                         Một Số Thao Tác Với Git
 
 # Một Số Lệnh Cơ Bản
-!(mô hình)[https://github.com/trantronghienit/workingGit/blob/master/git_status_sequence.png]
+![mô hình](https://github.com/trantronghienit/workingGit/blob/master/git_status_sequence.png)
 ### tạo file ghi chú 
 ``` echo "# ShellADB" >> README.md ``` 
 ### Khởi Tạo Git Local
