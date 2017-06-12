@@ -115,3 +115,15 @@ VD: push branch master lên remote với tên là develop</br>
 ```git revert <id_commit>```
 ### Gộp một vài commit thành 1 commit duy nhất
 ```git rebase -i <commit_end>```
+
+# Git fetch
+### Công dụng: Lấy source mới nhất trên server về đè lên source hiện tại trên máy local
+```git fetch <Tên nhánh>```</br>
+# Git pull
+### Công dụng: Lấy source mới nhất trên server về và tiến hành trộn
+```git pull <Tên nhánh>```</br>
+# Git Tag
+### Công dụng: Gắn nhãn (tagging) Người ta khuyên nên tạo nhãn (tags) khi phát hành phần mềm. Đây là khái niệm được biết đến, đã từng có trên SVN. Bạn tạo tag mới tên là 1.0.0 bằng cách
+```git tag 1.0.0 1b2e1d63ff```</br>
+
++ Chuỗi 1b2e1d63ff là 10 ký tự đầu tiên của mã commit (commit id) mà bạn muốn tham chiếu đến bằng nhãn của bạn. Bạn có thể lấy mã commit với lệnh
