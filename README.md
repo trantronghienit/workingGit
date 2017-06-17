@@ -127,3 +127,12 @@ VD: push branch master lên remote với tên là develop</br>
 ```git tag 1.0.0 1b2e1d63ff```</br>
 
 + Chuỗi 1b2e1d63ff là 10 ký tự đầu tiên của mã commit (commit id) mà bạn muốn tham chiếu đến bằng nhãn của bạn. Bạn có thể lấy mã commit với lệnh
+
+# Kiểm Tra và Thay Đổi Thông Tin Git:
+### Kiểm Tra Thông Tin
+```git config --list // liệt kê tất cả các thông tin
+git config user.email  // hiện thông tin email hiện hành
+git config user.name```
+### Thay Đổi Thông Tin
+```git config --global user.email [your email address here]
+git config --global user.name [your name address here]```
