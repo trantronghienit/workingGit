@@ -22,8 +22,11 @@ git add tenfile
 ### kiểm tra log đã commit trên hệ thống dưới local và cả trên server
 ```git log```
 ### CLONE (kéo dự án từ server)
-```git clone <url>```</br>
+```git clone <remote_repo>```</br>
+```git clone <remote_repo> <ten_folder_local>```
 ```git clone -b <branch> <remote_repo>```
+**Lưu ý: Nếu ta muốn kéo tất cả cách nhánh bao gồm cả tag từ Remote... ta có đường dẫn đến thư mục nhưng không có .git**
+```git clone ```
 ### PULL (cập nhật lại nội dung từ server đối với dự án đã kéo về) 
 ```git pull```
 
