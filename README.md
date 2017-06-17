@@ -130,9 +130,50 @@ VD: push branch master lên remote với tên là develop</br>
 
 # Kiểm Tra và Thay Đổi Thông Tin Git:
 ### Kiểm Tra Thông Tin
-```git config --list // liệt kê tất cả các thông tin
-git config user.email  // hiện thông tin email hiện hành
-git config user.name```
+```
+git config --list ---> liệt kê tất cả các thông tin
+git config user.email  ----> hiện thông tin email hiện hành
+git config user.name
+```
+
 ### Thay Đổi Thông Tin
-```git config --global user.email [your email address here]
-git config --global user.name [your name address here]```
+```
+git config --global user.email [your email address here]
+git config --global user.name [your name address here]
+```
+# Vấn Đề Merge Và Rebase
+## So Sánh Giữa Merge và rebase
+```
+|===============|==============================================================================|
+|               |                         F---G---H  develop                                   |
+|  Ban đầu      |                        /                                                     |
+|               |               A---B---C---D---E   master                                     |
+|===============|==============================================================================|
+|               |                 Rebase                  |             Merge                  |
+|===============|=========================================|====================================|
+| Branch        |                 develop                 |             master                 |
+|     hiện tại  |                                         |                                    |
+|---------------|-----------------------------------------|------------------------------------|
+|    Câu lệnh   |           git rebase master             |       git merge develop            |
+|               |       hoặc                              |                                    |
+|               |           git rebase master develop     |                                    |
+|---------------|-----------------------------------------|------------------------------------|
+|               |                   F'---G'---H'  develop |           F---G---H  develop       |
+| Sơ đồ kết quả |                  /                      |          /         \               |
+|               | A---B---C---D---E   master              | A---B---C---D---E---I   master     |
+|---------------|-----------------------------------------|------------------------------------|
+|   Nguyên lý   | - Lưu các commit F, G, H (các commit của| - Tạo một commit mới (I) áp dụng   |
+|               |   develop tính tới cha chung gần nhất)  |   tất cả các thay đổi của các      |
+|               | - Reset develop về commit C             |   commit trên develop tính đến     |
+|               | - Áp dụng các commit của master đến     |   cha chung gần nhất.              |
+|               |   cha chung gần nhất C                  |   Cụ thể ở đây là tất cả các       |
+|               | - Tạo các commit mới F', G', H' theo    |   commit F, G, H                   |
+|               |   sự thay đổi của các commit F, G, H    |                                    |
+|---------------|-----------------------------------------|------------------------------------|
+|    Đặc điểm   | - Các commit của rebase-branch sẽ là    | - Lịch sử commit không bị thay đổi |
+|               |   các commit mới nhất                   |                                    |
+|               | - Lịch sử commit sẽ bị thay đổi         |                                    |
+|               |                                         |                                    |
+|               |                                         |                                    |
+|===============|=========================================|====================================|
+```
