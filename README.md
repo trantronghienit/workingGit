@@ -25,8 +25,6 @@ git add tenfile
 ```git clone <remote_repo>```</br>
 ```git clone <remote_repo> <ten_folder_local>```
 ```git clone -b <branch> <remote_repo>```
-**Lưu ý: Nếu ta muốn kéo tất cả cách nhánh bao gồm cả tag từ Remote... ta có đường dẫn đến thư mục nhưng không có .git**
-```git clone ```
 ### PULL (cập nhật lại nội dung từ server đối với dự án đã kéo về) 
 ```git pull```
 
@@ -58,7 +56,7 @@ nhánh thì cũ giống như repository cũng có 2 loại là branch local và 
 ### Tạo Nhánh
 ```git branch namebranch```
 ### Kiểm tra nhánh
-```$ git branch 
+```$ git branch -a
   issue1
 * master     // có dấu sao là đang ở nhánh hiện tại
 ```
