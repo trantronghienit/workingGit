@@ -83,16 +83,7 @@ vd: push branch test lên branch test trên remote </br>
 VD: push branch master lên remote với tên là develop</br>
 ```git push origin master:develop```</br>
 
-
 ------------------------------------------
-# một số vần đề về commit 
-### sửa lại nội dung commit 
-```git commit --amend```
-### đổi tên user hoặc email khi commit --> của HEAD 
-```git commit --amend -m "nội dung commit message" --author="user.name <user.email>"```
-### Xóa 1 file ra khỏi commit 
-```git rm --cached <tên file>```
-
 # git reset
 ### Chỉ đưa HEAD về như cũ
 + nghĩa là khi ta lỡ commit nhưng giờ muốn bỏ commit đó đi</br>
@@ -112,20 +103,23 @@ VD: push branch master lên remote với tên là develop</br>
 ```git reflog```</br>
 ===> vì tính chất của 3 loại lệnh trên chỉ là di chuyển về 
 
----------------------------------------
-# git reset single file ?
+### git reset single file ?
 + đối với file chưa được add và chưa commit và muốn file đó quay về lúc commit hiện thời 
-```git checkout -- [path file]
-vd: git checkout -- lever\1/index.txt```
+```git checkout -- [path file]     vd: git checkout -- lever\1/index.txt```
 
 + còn lỡ chúng ta muốn reset 1 file nào đó nhưng file đó đã đc add và commit rồi thì sao giải pháp
-
 ```checkout đến working commit muốn trở về và đường dẫn đến file đó 
 git checkout <commit hash> -- <path file> 
 vd: git checkout c5f567 -- file1/to/restore file2/to/restore
-===> sau khi đánh lênh trên thì mặc nhiên nội dung file sẽ quay lại mốc commit chúng ta đã checkout nhưng vấn đề là khi chuyển nhánh qua nhánh hiện tại thì nó lại quay về như cũ 
-....```
+// sau khi đánh lênh trên thì mặc nhiên nội dung file sẽ quay lại mốc commit chúng ta đã checkout nhưng vấn đề là khi chuyển nhánh qua nhánh hiện tại thì nó lại quay về như cũ```
 
+# một số vần đề về commit 
+### sửa lại nội dung commit 
+```git commit --amend```
+### đổi tên user hoặc email khi commit --> của HEAD 
+```git commit --amend -m "nội dung commit message" --author="user.name <user.email>"```
+### Xóa 1 file ra khỏi commit 
+```git rm --cached <tên file>```
 ### Với trường hợp đã public commit 
 + giống như reset nhưng revert thay đổi cả mes commit
 ```git revert <id_commit>```
@@ -138,6 +132,7 @@ vd: git checkout c5f567 -- file1/to/restore file2/to/restore
 # Git pull
 ### Công dụng: Lấy source mới nhất trên server về và tiến hành trộn
 ```git pull <Tên nhánh>```</br>
+
 # Git Tag
 ### Công dụng: Gắn nhãn (tagging) Người ta khuyên nên tạo nhãn (tags) khi phát hành phần mềm. Đây là khái niệm được biết đến, đã từng có trên SVN. Bạn tạo tag mới tên là 1.0.0 bằng cách
 ```git tag 1.0.0 1b2e1d63ff```</br>
