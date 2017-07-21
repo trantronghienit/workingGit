@@ -108,10 +108,12 @@ VD: push branch master lên remote với tên là develop</br>
 ```git checkout -- [path file]     vd: git checkout -- lever\1/index.txt```
 
 + còn lỡ chúng ta muốn reset 1 file nào đó nhưng file đó đã đc add và commit rồi thì sao giải pháp
-```checkout đến working commit muốn trở về và đường dẫn đến file đó 
+```
+checkout đến working commit muốn trở về và đường dẫn đến file đó 
 git checkout <commit hash> -- <path file> 
 vd: git checkout c5f567 -- file1/to/restore file2/to/restore
-// sau khi đánh lênh trên thì mặc nhiên nội dung file sẽ quay lại mốc commit chúng ta đã checkout nhưng vấn đề là khi chuyển nhánh qua nhánh hiện tại thì nó lại quay về như cũ```
+// sau khi đánh lênh trên thì mặc nhiên nội dung file sẽ quay lại mốc commit chúng ta đã checkout nhưng vấn đề là khi chuyển nhánh qua nhánh hiện tại thì nó lại quay về như cũ
+```
 
 # một số vần đề về commit 
 ### sửa lại nội dung commit 
