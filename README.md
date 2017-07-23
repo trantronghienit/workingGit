@@ -192,8 +192,64 @@ git config --global user.name [your name address here]
 ```
 
 ## Vấn Đề Xung đột khi Merge (Merge Conflict)
+### tại sao lại sảy ra Merge Conflict ?
++ bởi vì sự thay đổi 1 dòng hay 1 đọc code trong 1 file (giống nhau) giữa 2 nhánh giờ chúng ta gộp nó lại và git không biết nên lấy cái nào. 
+### có 2 cách giải quyết vấn đền này  
+1. giải quyết bằng tay.
+```
+lỗi xuất hiện khi merge
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
 
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
 
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+    both modified:      index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
++ và file của bản sẽ bị thay đổi  thế này 
+```
+<<<<<<< HEAD:index.html
+<div id="footer">contact : email.support@github.com</div>
+=======
+<div id="footer">
+ please contact us at support@github.com
+</div>
+>>>>>>> iss53:index.html
+
+<<<<<<< HEAD:index.html
+      là phần code đang HEAD trên nhánh hiện tại 
+=======
+      là phần code của nhánh bạn muốn gộp vào 
+>>>>>>> iss53:index.html
+```
++ bạn sẽ dựa vào thông số git status đến từng file đó mà chỉnh sửa theo ý của bạn sau đó add và commit bình thường 
+
+2. giải quyết bằng cách chọn 1 code của duy nhất 1 nhánh để gộp.
++ dùng ```git mergetool``` để chon 1 bên
+```
+$ git mergetool
+
+This message is displayed because 'merge.tool' is not configured.
+See 'git mergetool --tool-help' or 'git help config' for more details.
+'git mergetool' will now attempt to use one of the following tools:
+opendiff kdiff3 tkdiff xxdiff meld tortoisemerge gvimdiff diffuse diffmerge ecmerge p4merge araxis bc3 codecompare vimdiff emerge
+Merging:
+index.html
+
+Normal merge conflict for 'index.html':
+  {local}: modified file
+  {remote}: modified file
+Hit return to start merge resolution tool (opendiff):
+```
 
 # Dừng theo dõi file (untracked files)
 + nói với git rằng dừng theo dõi sự thay đổi của file này khi bạn đánh git status git cũng chẳng quan tâm đến sự thay đổi của nó nữa
