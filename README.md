@@ -190,3 +190,14 @@ git config --global user.name [your name address here]
 |               |                                         |                                    |
 |===============|=========================================|====================================|
 ```
+
+## Vấn Đề Xung đột khi Merge (Merge Conflict)
+
+
+
+# Dừng theo dõi file (untracked files)
++ nói với git rằng dừng theo dõi sự thay đổi của file này khi bạn đánh git status git cũng chẳng quan tâm đến sự thay đổi của nó nữa
+```git update-index --assume-unchanged path/to/file```
++ hoặc ```git rm -r --cached <file>```   tất cả ```file git rm --cached```
+
++ muốn git theo dõi lại các file đó thì ```git update-index --no-assume-unchanged path/to/file```
