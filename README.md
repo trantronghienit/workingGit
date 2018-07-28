@@ -257,3 +257,13 @@ Hit return to start merge resolution tool (opendiff):
 + hoặc ```git rm -r --cached <file>```   tất cả ```file git rm --cached```
 
 + muốn git theo dõi lại các file đó thì ```git update-index --no-assume-unchanged path/to/file```
+
+# File Pacth  (untracked files)
+## Apply file pacth 
++ ở trường hợp nếu apply file pacth nếu xung đột bởi 1 file (giống conflic )thì git tạo ra file .rej lúc này ta chỉ cần cmd sau:
+```
+find . -name "*.rej" -exec rm -f {} \;
+git add .
+git am --resolved
+```
++ sau đó kiểm tra lại file conflict sửa theo ý bi conflict
